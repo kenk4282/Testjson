@@ -15,7 +15,7 @@
     <select name="" id="movie_title" onchange="load_cast()"></select><br>
     <textarea name="" id="movie_cast" cols="30" rows="10">
     </textarea><br>
-    <input type="text" name="" id="grendle">
+    <input type="text" name="" id="genres">
     <div id="out"></div>
     <script>
         let jsonEx;
@@ -52,13 +52,13 @@
         function load_cast(){
             var t = document.getElementById("movie_title");
             document.getElementById("movie_cast").value = "";
-            document.getElementById("grendle").value = "";
+            document.getElementById("genres").value = "";
             for(i = 0 ; i < jsonEx.length ; i++){
                 if(jsonEx[i].title == t.value){
                     for(j = 0; j < jsonEx[i].cast.length; j++){
                         document.getElementById("movie_cast").value += jsonEx[i].cast[j] + "\n";
                     }
-                    document.getElementById("grendle").value = jsonEx[i].genres;
+                    document.getElementById("genres").value = jsonEx[i].genres;
                 }
             }
         }
